@@ -1,0 +1,53 @@
+.mainContainer{
+    text-align: center;
+  background-color: white;
+  display: grid;
+  grid-template-areas:
+  'header header header'
+  '. mainview .'
+  '. commentview .';
+  grid-template-columns: 1fr 4fr 1fr;
+  justify-content: center;
+}
+
+.articleContainer{
+    grid-area: mainview;
+}
+
+
+
+h2{
+    text-align: left;
+    padding-left: 5%;
+}
+
+.commentBox{
+    grid-area: commentview;
+    display: grid;
+    grid-template-areas:
+    'comments'
+    'commentsform'
+}
+
+.comments-div{
+    grid-area:comments;
+    display:flex;
+    flex-direction: column;
+}
+
+
+.comments-indv{
+    border: 1px solid black;
+    min-height: 100px;
+    max-width: 600px;
+    margin: 5%;
+    
+}
+
+#commentBody{
+    grid-area: body;
+    min-width: 600px;
+    min-height: 200px;
+}
+
+
