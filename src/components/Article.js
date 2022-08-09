@@ -17,7 +17,7 @@ const Article =() =>{
 */
 
     const SubmitComment=()=>{
-        fetch('http://globalmessageboardly.herokuapp.com/comments',{
+        fetch('https://globalmessageboardly.herokuapp.com/comments',{
             method:'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
