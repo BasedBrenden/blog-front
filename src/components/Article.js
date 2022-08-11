@@ -9,7 +9,7 @@ const Article =() =>{
      const Article = useLocation()
      const [commentz, setComments] = useState([])
 
-     let toggle = false;
+     const[toggle, setToggle]= useState(false)
     
      const GetComments = () =>{
         fetch('https://globalmessageboardly.herokuapp.com/')
@@ -23,22 +23,29 @@ const Article =() =>{
     }
 
     const SubmitComment= ()=>{
+        setToggle(['true'])
         fetch('https://globalmessageboardly.herokuapp.com/comments',{
             method:'POST',
+            mode:'cors',
+            headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({ 
                 post: document.getElementById("commentBody").value,
                 author: document.getElementById("commentAuthor").value,
                 postID: Article.state.index })})
-            .then(response => response.json())
+            .then(response => {
+                 console.log("it worked"); return response.json();}
+                )
+            .then(()=> setToggle(true))
             .catch(err => console.log(err))
 
-        toggle = true;
+        
         
     }
 
     useEffect(()=>{
         GetComments()
         console.log("yippeee")
+        setToggle(false)
     },[toggle])
 
     

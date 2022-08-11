@@ -6,6 +6,7 @@ import {Link} from "react-router-dom"
 
 const Blogs =() =>{
     const [blogs, setblogs] = useState([])
+    let nothing = "eep"
 
     const getBlogInfo =()=>{
         fetch('https://globalmessageboardly.herokuapp.com/')
@@ -29,7 +30,7 @@ const Blogs =() =>{
         
         getBlogInfo()
 
-    },[]);
+    },[nothing]);
 
 
 
