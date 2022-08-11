@@ -63,7 +63,7 @@ const Article =() =>{
                 <div className="comments-form">
                     <input type="text" placeholder="Enter Comment" id="commentBody"></input>
                     <input type="text" placeholder="Name" id="commentAuthor"></input>
-                    <button type="button" onClick={()=> {SubmitComment()}} id="commentPost">Post Comment</button>
+                    <button type="submit" onClick={()=> {SubmitComment()}} id="commentPost">Post Comment</button>
                 </div>
             </div>
 
