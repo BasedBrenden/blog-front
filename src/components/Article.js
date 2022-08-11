@@ -25,7 +25,10 @@ const Article =() =>{
     const SubmitComment= ()=>{
         fetch('https://globalmessageboardly.herokuapp.com/comments',{
             method:'PUT',
-            mode: 'no-cors',
+            headers: {
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                },
             body: JSON.stringify({ 
                 post: document.getElementById("commentBody").value,
                 author: document.getElementById("commentAuthor").value,
