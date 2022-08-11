@@ -28,8 +28,7 @@ const Article =() =>{
             body: JSON.stringify({ 
                 post: document.getElementById("commentBody").value,
                 author: document.getElementById("commentAuthor").value,
-                postID: Article.state.index })},
-                )
+                postID: Article.state.index })})
             .then(response => response.json())
             .catch(err => console.log(err))
 
