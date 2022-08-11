@@ -25,7 +25,6 @@ const Article =() =>{
     const SubmitComment= ()=>{
         fetch('https://globalmessageboardly.herokuapp.com/comments',{
             method:'POST',
-            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
                 post: document.getElementById("commentBody").value,
                 author: document.getElementById("commentAuthor").value,
