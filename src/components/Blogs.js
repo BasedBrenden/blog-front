@@ -8,11 +8,7 @@ const Blogs =() =>{
     const [blogs, setblogs] = useState([])
 
     const getBlogInfo =()=>{
-        fetch('https://globalmessageboardly.herokuapp.com/', 
-       { headers: {
-            'Access-Control-Allow-Origin' : '*',
-            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-            }})
+        fetch('https://globalmessageboardly.herokuapp.com/')
         .then((response)=>{
             return response.json()
         }).then((response)=>{
