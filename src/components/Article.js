@@ -1,5 +1,5 @@
 import {Link, useLocation} from "react-router-dom"
-import {useState,useEffect, useCallback} from "react"
+import {useState,useEffect} from "react"
 import defaultStock from "./styles/radnom_stock1.jpg"
 import dateFormat from "dateformat"
 import defaultProfile from "./styles/ProfilePic.jpg"
@@ -35,9 +35,8 @@ const Article =() =>{
                 post: document.getElementById("commentBody").value,
                 author: document.getElementById("commentAuthor").value,
                 postID: Article.state.index })})
-            .then(response => {
-                 console.log("it worked");
-                 setToggle(true);
+            .then(() => {
+                 toggle !== true ? setToggle(true) : setToggle(false)
                 }
                 )
             .catch(err => console.log(err))
@@ -48,8 +47,6 @@ const Article =() =>{
 
     useEffect(()=>{
         GetComments()
-        console.log("yippeee")
-        setToggle(false)
     },[toggle])
 
     
