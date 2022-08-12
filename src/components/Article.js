@@ -36,9 +36,10 @@ const Article =() =>{
                 author: document.getElementById("commentAuthor").value,
                 postID: Article.state.index })})
             .then(response => {
-                 console.log("it worked"); return response.json();}
+                 console.log("it worked");
+                 setToggle(true);
+                }
                 )
-            .then(()=> setToggle(true))
             .catch(err => console.log(err))
 
         
