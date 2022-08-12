@@ -27,8 +27,10 @@ const Article =() =>{
         setToggle(['true'])
         fetch('https://globalmessageboardly.herokuapp.com/comments',{
             method:'POST',
-            mode:'cors',
-            headers:{'Content-Type': 'application/json'},
+            mode: 'cors',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'},
             body: JSON.stringify({ 
                 post: document.getElementById("commentBody").value,
                 author: document.getElementById("commentAuthor").value,
