@@ -1,3 +1,4 @@
+
 .mainContainer{
     text-align: center;
   background-color: white;
@@ -11,10 +12,35 @@
   
 }
 
+.nav{
+    grid-area: header;
+}
+
 .articleContainer{
     grid-area: mainview;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 12px;
+    margin-bottom: 42px;
+}
+
+.article-title{
+    text-align: left;
+    font-weight: 700;
+    font-size: 42px;
+    margin-bottom: 26px;
+}
+
+.article-header > p{
+    margin-left: 0%;
+    text-align: left;
+    text-decoration: dashed;
+    color: rgb(71, 71, 71);
+    padding: 0;
+    margin-bottom: 42px;
+    font-style: italic;
+}
+
+.article-header > p >span{
+    color: rgb(76, 183, 216);
 }
 
 
@@ -25,6 +51,7 @@ h2{
 }
 
 .commentBox{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     grid-area: commentview;
     display: grid;
     grid-template-areas:
@@ -40,17 +67,85 @@ h2{
 
 
 .comments-indv{
-    border: 1px solid black;
-    min-height: 100px;
-    max-width: 600px;
-    margin: 5%;
     
+    display: grid;
+    grid-template-areas:
+    'profile author date .'
+    'profile comment comment .'
+    ;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 50px;
+    max-width: 800px;
+    margin: 5%;
+    margin-bottom: 0%;
+    
+}
+
+.comments-comment{
+    grid-area: comment;
+    text-align: left;
+    margin-top: 0;
+}
+
+.comments-date{
+    grid-area: date;
+    color: rgb(71, 71, 71);
+    font-weight:500;
+    text-align: right;
+}
+
+.comments-author{
+    grid-area: author;
+    text-align: left;
+    font-weight: bold;
+}
+
+.comments-profile{
+    grid-area: profile;
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.comments-form{
+    display: grid;
+    grid-template-areas:
+    '. body .'
+    '. name .'
+    '. submit .'
+    ;
 }
 
 #commentBody{
     grid-area: body;
-    min-width: 600px;
-    min-height: 200px;
+    max-width: 600px;
+    max-height: 200px;
 }
 
+#commentAuthor{
+    grid-area: name;
+    margin-top: 24px;
+    max-width: 600px;
+}
+
+#commentPost{
+    margin-top: 2%;
+    grid-area: submit;
+    justify-self: end;
+    padding: 20px 10px;
+    width: 200px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid rgb(255, 172, 17);
+    background-color: white;
+    letter-spacing: 0.5px;
+    
+}
+
+#commentPost:hover{
+    cursor:pointer;
+   background-color: rgb(255, 172, 17);
+   color: white;
+}
 

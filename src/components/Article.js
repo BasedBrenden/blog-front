@@ -2,6 +2,7 @@ import {Link, useLocation} from "react-router-dom"
 import {useState,useEffect, useCallback} from "react"
 import defaultStock from "./styles/radnom_stock1.jpg"
 import dateFormat from "dateformat"
+import defaultProfile from "./styles/ProfilePic.jpg"
 import './styles/Articles.css'
 import Nav from "./Nav"
 
@@ -50,17 +51,21 @@ const Article =() =>{
 
     
     return(
-        <div>
-            <Nav/>
         
-            <div className="mainContainer">
+            
+        <div className="mainContainer">
+            <div className="nav">
+                <Nav />
+            </div>
+            
+          
             <div className="articleContainer">
-                <img src={defaultStock} alt="img not found" className="blog-image"></img>
-                <div className="blog-header">
-                    <p>{dateFormat(Article.state.temp.date,"mmmm dS, yyyy")}</p>
-                    <p>Author: John Doe</p>
+                <p className="article-title">{Article.state.temp.title}</p>
+                <div className="article-header">
+                    <p>Posted by <span>John Doe</span> on {dateFormat(Article.state.temp.date,"mmmm dS, yyyy")}</p>
                 </div>
-                <p>{Article.state.temp.title}</p>
+                <img src={defaultStock} alt="img not found" className="blog-image"></img>
+                
                 <p>{Article.state.temp.blogPost}</p>
                 
                 <Link to="/"><button type="button">Go back!</button></Link>
@@ -75,22 +80,23 @@ const Article =() =>{
                     <h2>Comments</h2>
                     {commentz.map((comment,index) =>
                     <div className="comments-indv" key={index}>
+                        <img src={defaultProfile} alt="not found" className="comments-profile"></img>
                         <p className="comments-comment">{comment.comment}</p>
-                        <p className="comments-date">Submited on {dateFormat(comment.date, "mmmm dS, yyyy")}</p>
+                        <p className="comments-date">{dateFormat(comment.date, "mmmm dS, yyyy")}</p>
                         <p className="comments-author">{comment.author}</p>
                     </div>)}
                 </div>
                 
                 <div className="comments-form">
                     <textarea type="text" placeholder="Enter Comment" id="commentBody"></textarea>
-                    <textarea type="text" placeholder="Name" id="commentAuthor"></textarea>
+                    <input type="text" placeholder="Name" id="commentAuthor"></input>
                     <button type="button" onClick={()=> {SubmitComment()}} id="commentPost">Post Comment</button>
                 </div>
             </div>
 
             
-            </div>
-        </div>
+          </div>
+        
     )
 }
 
