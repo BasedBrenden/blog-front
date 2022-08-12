@@ -59,9 +59,7 @@ const Blogs =() =>{
                     <p className="blog-title">{temp.title}</p>
                     <p className="blog-content">{temp.blogPost}</p>
                     <Link to="/article" className="link-btn" state={{temp, index}}><button className="continueBtn">Continue Reading</button></Link>
-                    <div>
-                    <hr></hr>
-                    </div>
+                  
                 
                 </div>
                 

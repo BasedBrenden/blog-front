@@ -8,10 +8,13 @@
   '. commentview .';
   grid-template-columns: 1fr 4fr 1fr;
   justify-content: center;
+  
 }
 
 .articleContainer{
     grid-area: mainview;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 12px;
 }
 
 

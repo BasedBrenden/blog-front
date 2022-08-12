@@ -62,7 +62,7 @@ const Article =() =>{
                 </div>
                 <p>{Article.state.temp.title}</p>
                 <p>{Article.state.temp.blogPost}</p>
-                <hr></hr>
+                
                 <Link to="/"><button type="button">Go back!</button></Link>
                
             </div>
@@ -82,8 +82,8 @@ const Article =() =>{
                 </div>
                 
                 <div className="comments-form">
-                    <input type="text" placeholder="Enter Comment" id="commentBody"></input>
-                    <input type="text" placeholder="Name" id="commentAuthor"></input>
+                    <textarea type="text" placeholder="Enter Comment" id="commentBody"></textarea>
+                    <textarea type="text" placeholder="Name" id="commentAuthor"></textarea>
                     <button type="button" onClick={()=> {SubmitComment()}} id="commentPost">Post Comment</button>
                 </div>
             </div>
