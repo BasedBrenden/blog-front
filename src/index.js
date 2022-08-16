@@ -7,7 +7,7 @@ import RouteSwitch from './RouterSwitch';
 import Amplify from 'aws-amplify';
 import awsmobile from '../src/aws-exports'
 
-Amplify.configure(awsmobile)
+Amplify.configure({...awsmobile,ssr:true})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
