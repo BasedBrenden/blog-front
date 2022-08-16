@@ -7,8 +7,14 @@ const Nav = () =>{
 
     return(
         <div className="navbar">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p><Link to="/">Postly</Link></p>
+            <div className="title">
+                <img src={logo} className="App-logo title-image" alt="logo" />
+                <p className="title-name"><Link to="/">Postly</Link></p>
+            </div>
+            
+            <Link to="/admin" className="addPost"><span className="material-symbols-outlined">
+note_add
+</span></Link>
         </div>
     )
 }

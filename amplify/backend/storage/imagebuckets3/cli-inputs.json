@@ -1,0 +1,18 @@
+{
+  "resourceName": "imagebuckets3",
+  "policyUUID": "615cac4d",
+  "bucketName": "blogfront32ef6cadf62c41a1894cbe3da2bda5e9",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

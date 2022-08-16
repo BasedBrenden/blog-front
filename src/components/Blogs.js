@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from "react"
+import {Storage} from 'aws-amplify'
 import defaultStock from "./styles/radnom_stock1.jpg"
 import "../components/styles/Blogs.css"
 import dateFormat from 'dateformat'
@@ -46,7 +47,7 @@ const Blogs =() =>{
             
             {blogs.map((temp, index)=>
                 <div className="blog-post" key={temp.title}>
-                    <img src={defaultStock} alt="img not found" className="blog-image"></img>
+                    <img src={Storage.get(temp.image)} alt={defaultStock} className="blog-image"></img>
                     <div className="blog-header">
                         <p>{dateFormat(temp.date,"mmmm dS, yyyy")}</p>
                         {temp.comments.length > 0
