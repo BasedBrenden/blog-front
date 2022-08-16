@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import RouteSwitch from './RouterSwitch';
 
 import Amplify from 'aws-amplify';
-import awsmobile from './aws-exports'
+import awsmobile from '../src/aws-exports'
 
 Amplify.configure(awsmobile)
 
