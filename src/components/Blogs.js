@@ -3,10 +3,16 @@ import defaultStock from "./styles/radnom_stock1.jpg"
 import "../components/styles/Blogs.css"
 import dateFormat from 'dateformat'
 import {Link} from "react-router-dom"
+import {ref, getDownloadURL, listAll, list} from 'firebase/storage'
+import { storage } from "../Firebase"
+
+
 
 const Blogs =() =>{
     const [blogs, setblogs] = useState([])
+    const [imageUrls, setImageUrls] = useState([])
     let nothing = "eep"
+    const imageListRef = ref(storage, "images/")
 
     const getBlogInfo =()=>{
         fetch('https://globalmessageboardly.herokuapp.com/')
@@ -14,6 +20,14 @@ const Blogs =() =>{
             return response.json()
         }).then((response)=>{
             setblogs(response.posts)
+            listAll(imageListRef).then((response) => {
+                response.items.forEach((item) => {
+                  getDownloadURL(item).then((url) => {
+                    setImageUrls( (imageUrls) => [...imageUrls, url]);
+                    console.log(url)
+                  });
+                });
+              });
         }).catch((err)=>{
             console.log(err)
         })
@@ -29,7 +43,8 @@ const Blogs =() =>{
         
         
         getBlogInfo()
-
+        
+        console.log("i fire once")
     },[nothing]);
 
 
@@ -46,7 +61,7 @@ const Blogs =() =>{
             
             {blogs.map((temp, index)=>
                 <div className="blog-post" key={temp.title}>
-                    <img src={defaultStock} alt="not available" className="blog-image"></img>
+                    <img src={imageUrls[index]} alt="not available" className="blog-image"></img>
                     <div className="blog-header">
                         <p>{dateFormat(temp.date,"mmmm dS, yyyy")}</p>
                         {temp.comments.length > 0
