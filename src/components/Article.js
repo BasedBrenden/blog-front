@@ -1,6 +1,5 @@
 import {Link, useLocation} from "react-router-dom"
 import {useState,useEffect} from "react"
-import defaultStock from "./styles/radnom_stock1.jpg"
 import dateFormat from "dateformat"
 import defaultProfile from "./styles/ProfilePic.jpg"
 import './styles/Articles.css'
@@ -47,6 +46,7 @@ const Article =() =>{
 
     useEffect(()=>{
         GetComments()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[toggle])
 
     

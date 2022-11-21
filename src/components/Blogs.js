@@ -1,18 +1,17 @@
 import React,{useState, useEffect} from "react"
-import defaultStock from "./styles/radnom_stock1.jpg"
 import "../components/styles/Blogs.css"
 import dateFormat from 'dateformat'
 import {Link} from "react-router-dom"
-import {ref, getDownloadURL, listAll, list} from 'firebase/storage'
-import { storage } from "../Firebase"
+//import {ref}  from 'firebase/storage'
+//import { storage } from "../Firebase"
 
 
 
 const Blogs =() =>{
     const [blogs, setblogs] = useState([])
-    const [imageUrls, setImageUrls] = useState([])
+    //const [imageUrls, setImageUrls] = useState([])
     let nothing = "eep"
-    const imageListRef = ref(storage, "images/")
+    //const imageListRef = ref(storage, "images/")
 
     const getBlogInfo =()=>{
         fetch('https://globalmessageboardly.herokuapp.com/')
