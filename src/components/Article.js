@@ -40,39 +40,29 @@ const Article =() =>{
                 )
             .catch(err => console.log(err))
 
-        
-        
     }
 
     useEffect(()=>{
         GetComments()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[toggle])
-
     
     return(
         
-            
         <div className="mainContainer">
             <div className="nav">
                 <Nav />
             </div>
             
-          
             <div className="articleContainer">
                 <p className="article-title">{Article.state.temp.title}</p>
                 <div className="article-header">
                     <p>Posted by <span>John Doe</span> on {dateFormat(Article.state.temp.date,"mmmm dS, yyyy")}</p>
                 </div>
-                <img src={Article.state.temp.image} alt="img not found" className="blog-image"></img>
-                
                 <p>{Article.state.temp.blogPost}</p>
                 
-                <Link to="/"><button type="button">Go back!</button></Link>
-               
+                <Link to="/"><button type="button">Go back!</button></Link>   
             </div>
-
-            
 
             <div className="commentBox">
                 <h2>Leave a comment</h2>

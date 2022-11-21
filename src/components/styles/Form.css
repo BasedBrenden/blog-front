@@ -11,6 +11,7 @@
     display: grid;
     grid-template-areas:
     'title'
+    'author'
     'content'
     'image'
     'submit'
@@ -28,7 +29,12 @@
     resize: none;
 }
 
+#author{
+    grid-area: author;
+}
+
 #image{
     grid-area: image;
 }
+
 
