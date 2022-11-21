@@ -14,7 +14,9 @@ const Form =() =>{
         fetch('https://globalmessageboardly.herokuapp.com/',{
             method:'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title: document.getElementById("title").value, blogPost: document.getElementById("content").value, image: imageKey })})
+            body: JSON.stringify({ title: document.getElementById("title").value, 
+                blogPost: document.getElementById("content").value, 
+                image: imageKey })})
             .then(response => response.json())
             .catch(err => console.log(err))
         
@@ -27,10 +29,11 @@ const Form =() =>{
         const imageRef = ref(storage, 'images/'+tempKey)
         uploadBytes(imageRef, imageKey).then(()=>{
             alert(tempKey +" has been uploaded");
-            console.log(tempKey.getDownloadURL())
-            console.log(imageRef)
+            console.log({tempKey})
+            console.log({imageRef})
+            setImageKey(tempKey)
         })
-        setImageKey(tempKey)
+        //setImageKey(tempKey.getDownloadURL())
         
     }
 

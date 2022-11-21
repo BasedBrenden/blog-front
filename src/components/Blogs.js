@@ -20,6 +20,7 @@ const Blogs =() =>{
             return response.json()
         }).then((response)=>{
             setblogs(response.posts)
+            /*
             listAll(imageListRef).then((response) => {
                 response.items.forEach((item) => {
                   getDownloadURL(item).then((url) => {
@@ -28,6 +29,7 @@ const Blogs =() =>{
                   });
                 });
               });
+              */
         }).catch((err)=>{
             console.log(err)
         })
@@ -61,7 +63,7 @@ const Blogs =() =>{
             
             {blogs.map((temp, index)=>
                 <div className="blog-post" key={temp.title}>
-                    <img src={imageUrls[index]} alt="not available" className="blog-image"></img>
+                    <img src={blogs.image} alt="not available" className="blog-image"></img>
                     <div className="blog-header">
                         <p>{dateFormat(temp.date,"mmmm dS, yyyy")}</p>
                         {temp.comments.length > 0
